@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>AI問診</title>
+    <script type="module" crossorigin src="/graduation_project/assets/main-DJmDjJzy.js"></script>
+    <link rel="stylesheet" crossorigin href="/graduation_project/assets/main-B9ZBBsIK.css">
+  </head>
+
+  <body data-page="ai-triage" class="bg-tertiary-50">
+    <!-- Icons -->
+    <svg style="display: none"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  style="position: absolute; width: 0; height: 0; overflow: hidden"
+>
+  <!-- Arrow-right icon -->
+  <symbol id="icon-arrow" viewBox="0 0 24 24">
+    <path
+      d="M3 12H21"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <path
+      d="M15 20L17.3 17.7C19.3 15.7 20.3 14.7 20.7 13.5
+             C21 12.5 21 11.5 20.7 10.4C20.3 9.3 19.3 8.3 17.3 6.3L15 4"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+  </symbol>
+</svg>
+
+<!-- 傳送 send icon -->
+<symbol id="icon-send" viewBox="0 0 32 32">
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M7.55135 2.6665C4.89772 2.6665 3.03951 5.28779 3.91805 7.78734L6.20616 14.2317C6.64159 15.4899 6.64159 16.8431 6.20616 18.1014L3.91805 24.5457C3.03951 27.0453 4.89772 29.6665 7.55135 29.6665C8.9279 29.6665 10.1721 28.8761 10.7464 27.6249L13.087 22.4037C14.0098 20.3922 14.0098 17.9409 13.087 15.9294L10.7464 10.7082C10.1721 9.45697 8.9279 8.6665 7.55135 8.6665H6.66668V6.6665H7.55135C10.6307 6.6665 13.066 8.41238 14.0542 11.1665H25.3333C26.0697 11.1665 26.6667 11.7634 26.6667 12.4998V13.8332H24.6667V13.1665H14.6165C14.8711 14.1086 15.0043 15.0745 15.0043 16.041C15.0043 17.0074 14.8711 17.9733 14.6165 18.9154H24.6667V18.2498H26.6667V19.5832C26.6667 20.3196 26.0697 20.9165 25.3333 20.9165H14.0542C13.066 23.6706 10.6307 25.4165 7.55135 25.4165H6.66668V23.4165H7.55135C8.9279 23.4165 10.1721 22.6261 10.7464 21.3749L13.087 16.1537C14.0098 14.1421 14.0098 11.6909 13.087 9.67935L10.7464 4.45817C10.1721 3.20693 8.9279 2.4165 7.55135 2.4165Z"
+    fill="#9CA3AF"
+  />
+</symbol>
+
+<!-- 麥克風 icon -->
+<symbol id="icon-mic" viewBox="0 0 48 48">
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M14 12C14 6.47715 18.4772 2 24 2C29.5228 2 34 6.47715 34 12V24C34 29.5228 29.5228 34 24 34C18.4772 34 14 29.5228 14 24V12ZM24 6C20.6863 6 18 8.68629 18 12V24C18 27.3137 20.6863 30 24 30C27.3137 30 30 27.3137 30 24V12C30 8.68629 27.3137 6 24 6Z"
+    fill="currentColor"
+  />
+  <path
+    d="M8 20C9.10457 20 10 20.8954 10 22V24C10 31.732 16.268 38 24 38C31.732 38 38 31.732 38 24V22C38 20.8954 38.8954 20 40 20C41.1046 20 42 20.8954 42 22V24C42 33.2651 34.9999 40.8953 26 41.8901V44C26 45.1046 25.1046 46 24 46C22.8954 46 22 45.1046 22 44V41.8901C13.0001 40.8953 6 33.2651 6 24V22C6 20.8954 6.89543 20 8 20Z"
+    fill="currentColor"
+  />
+</symbol>
+
+<!-- 傳送 icon -->
+<symbol id="icon-send" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
+  <path
+    d="M21.5 13L12 8C10.4 7.2 9.6 6.8 9.1 6.9C8 7 7.2 7.8 7.1 8.9C7.1 9.4 7.4 10.2 8.1 11.8C8.4 12.4 8.6 12.8 8.7 13.2C8.9 14 8.9 15 8.7 15.8C8.6 16.2 8.4 16.6 8.1 17.2C7.4 18.8 7.1 19.6 7.1 20.1C7.2 21.2 8 22 9.1 22.1C9.6 22.2 10.4 21.8 12 21L21.5 16C23.7 15 24.8 14.5 25.2 13.8C25.5 13.2 25.5 12.5 25.2 11.9C24.8 11.3 23.7 10.8 21.5 13Z"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <path
+    d="M10 16H15"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</symbol>
+
+<!-- 刪除 icon -->
+<symbol id="icon-delete" viewBox="0 0 24 24">
+  <path
+    d="M6 7V17C6 19.2091 7.79086 21 10 21H14C16.2091 21 18 19.2091 18 17V7"
+    stroke="#9CA3AF"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M4 6H20"
+    stroke="#9CA3AF"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M14 10L14 16"
+    stroke="#9CA3AF"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M10 10L10 16"
+    stroke="#9CA3AF"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M15 6C15 5.60603 14.9224 5.21593 14.7716 4.85195C14.6209 4.48797 14.3999 4.15726 14.1213 3.87868C13.8427 3.6001 13.512 3.37913 13.1481 3.22836C12.7841 3.0776 12.394 3 12 3C11.606 3 11.2159 3.0776 10.8519 3.22836C10.488 3.37913 10.1573 3.6001 9.87868 3.87868C9.6001 4.15726 9.37913 4.48797 9.22836 4.85195C9.0776 5.21593 9 5.60603 9 6"
+    stroke="#9CA3AF"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</symbol>
+</svg>
+
+    <!-- Header -->
+    <!-- Google icon -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  rel="stylesheet"
+/>
+
+<header class="custom-header">
+  <div class="header-left">
+    <button class="back-btn" onclick="history.back()">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M15 6L9 12L15 18" stroke="#333" stroke-width="2" fill="none" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="header-title zh-h5">掛號</div>
+
+  <div class="header-right">
+    <div class="header-avatar"></div>
+  </div>
+</header>
+
+    <section>
+      <div class="d-flex gap-3 flex-column">
+        <!-- Top bar -->
+        <div class="top-bar pt-8">
+          <div class="text-center">
+            <div class="zh-h2 mb-4">AI 問診</div>
+            <span class="pill-tag zh-h5" id="modeTag">聲音模式</span>
+          </div>
+        </div>
+
+        <!-- Chat area -->
+        <div class="chat-area-wrapper">
+          <div class="quick-tags-header">
+            <span class="quick-tags-title zh-text-m">常見症狀</span>
+          </div>
+
+          <div class="quick-tags">
+            <button class="quick-tag-btn" data-text="身體沒力">
+              <span class="quick-tag-text zh-h5">身體沒力</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="膝蓋痛">
+              <span class="quick-tag-text zh-h5">膝蓋痛</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="看不清楚">
+              <span class="quick-tag-text zh-h5">看不清楚</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="頻尿">
+              <span class="quick-tag-text zh-h5">頻尿</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="血壓高">
+              <span class="quick-tag-text zh-h5">血壓高</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+          </div>
+
+          <!-- Listening animation block -->
+          <div id="listeningBlock" class="listening-top-block d-none">
+            <div class="sound-wave" id="soundWave">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+
+          <!-- Chat messages -->
+          <div
+            id="chatScroller"
+            class="chat-scroller"
+            style="padding-bottom: 150px"
+          >
+            <div id="statusText" class="zh-text-m mb-3" style="color: #666">
+              點擊麥克風開始問診
+            </div>
+
+            <div class="chat-bubble-row">
+              <div>
+                <div class="chat-bubble bubble-ai">
+                  您好，我是 AI 問診小幫手。您可以直接說出現在哪裡不舒服，
+                  我會先幫您分析，提供較合適的看診科別參考。
+                </div>
+                <div class="chat-time">
+                  <span id="welcomeTime"></span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="previewBubble"
+              class="chat-bubble bubble-user hidden"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Bottom mic & send bar -->
+        <div class="bottom-bar fixed-bottom-bar">
+          <!-- ⭐ Mic主按鈕：懸浮在膠囊上方（50% 覆蓋） -->
+          <button id="micBtn" class="mic-main-btn" type="button">
+            <svg id="micIconMic" class="mic-icon" width="48" height="48">
+              <use href="#icon-mic"></use>
+            </svg>
+
+            <svg
+              id="micIconStop"
+              class="mic-icon hidden"
+              width="48"
+              height="48"
+            >
+              <rect x="12" y="12" width="24" height="24" rx="4" fill="white" />
+            </svg>
+
+            <div id="micSquare" class="mic-square hidden"></div>
+          </button>
+
+          <!-- ⭐ White pill row -->
+          <div
+            class="bottom-row d-flex justify-content-between align-items-center py-5"
+          >
+            <button
+              id="resetBtn"
+              class="bottom-icon-btn text-center"
+              type="button"
+              disabled
+            >
+              <div class="bottom-icon">
+                <span class="material-symbols-rounded" style="font-size: 32px"
+                  >delete</span
+                >
+              </div>
+              <div class="bottom-icon-label zh-text-m">退出</div>
+            </button>
+
+            <div
+              id="recordHint"
+              class="bottom-text text-center zh-text-m align-self-end"
+            >
+              點擊即可說話
+            </div>
+
+            <button
+              id="sendBtn"
+              class="bottom-icon-btn text-center"
+              type="button"
+              disabled
+            >
+              <div class="bottom-icon">
+                <span class="material-symbols-rounded" style="font-size: 32px"
+                  >send</span
+                >
+              </div>
+              <div class="zh-text-m">傳送</div>
+            </button>
+
+            <button id="muteBtn" class="d-none" type="button">
+              關閉 / 開啟語音播報
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../assets/js/ai-triage.js"></script>
+  </body>
+</html>

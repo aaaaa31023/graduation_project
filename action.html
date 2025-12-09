@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Crew Up!</title>
+    <script type="module" crossorigin src="/graduation_project/assets/main-DJmDjJzy.js"></script>
+    <link rel="stylesheet" crossorigin href="/graduation_project/assets/main-B9ZBBsIK.css">
+  </head>
+  <body data-page="action" class="bg-tertiary-50">
+    <!-- Google icon -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+  rel="stylesheet"
+/>
+
+<header class="custom-header">
+  <div class="header-left">
+    <button class="back-btn" onclick="history.back()">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path d="M15 6L9 12L15 18" stroke="#333" stroke-width="2" fill="none" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="header-title zh-h5">掛號</div>
+
+  <div class="header-right">
+    <div class="header-avatar"></div>
+  </div>
+</header>
+
+    <div class="container pt-7">
+      <!-- 建立活動nav -->
+      <nav class="navbar">
+        <div class="container-fluid position-relative">
+          <h1 class="fw-bold lh-base fs-2 mx-auto text-center">建立活動</h1>
+          <span
+            class="material-symbols-rounded position-absolute end-0 top-50 translate-middle-y me-2"
+            role="button"
+          >
+            close
+          </span>
+        </div>
+      </nav>
+
+      <!-- Stepper -->
+      <div class="py-6">
+        <div
+          class="stepper d-flex justify-content-between align-items-center gap-8 position-relative"
+        >
+          <div class="step-line"></div>
+          <!-- Step 1 -->
+          <div class="step active text-center flex-fill">
+            <div class="circle bg-primary-600 mx-auto mb-2"></div>
+            <h3 class="fs-3 fw-bold text-primary-600">活動主題</h3>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step text-center flex-fill">
+            <div class="circle bg-neutral-300 mx-auto mb-2"></div>
+            <h3 class="fs-3 text-neutral-400">活動詳情</h3>
+          </div>
+          <!-- Step 3 -->
+          <div class="step text-center flex-fill">
+            <div class="circle bg-neutral-300 mx-auto mb-2"></div>
+            <h3 class="fs-3 text-neutral-400">想說的話</h3>
+          </div>
+          <!-- 修改：step-line 確保線條收在圓點內 (left/right calc) -->
+          <div class="step-line position-absolute"></div>
+        </div>
+      </div>
+      <p class="fs-3 fw-bold text-center text-neutral-900">請選擇活動主題！</p>
+      <!-- 主題選擇 -->
+      <div class="theme-selector d-flex justify-content-center gap-4 pb-7">
+        <!-- 自我提升 -->
+        <div
+          class="theme-btn"
+          data-theme="self"
+          data-image="../assets/images/action/upload-img/1-img-self-improvement.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_6001_924)'%3e%3cpath%20d='M14%2019.6665C14.1841%2019.6665%2014.3333%2019.8158%2014.3333%2019.9998C14.3333%2020.1839%2014.1841%2020.3331%2014%2020.3331H10.6667C10.4826%2020.3331%2010.3333%2020.1839%2010.3333%2019.9998C10.3334%2019.8158%2010.4826%2019.6665%2010.6667%2019.6665H14ZM16.6667%2017.9998C16.8507%2017.9998%2016.9999%2018.1491%2017%2018.3331C17%2018.5173%2016.8507%2018.6665%2016.6667%2018.6665H8C7.81591%2018.6665%207.66667%2018.5173%207.66667%2018.3331C7.66675%2018.1491%207.81595%2017.9998%208%2017.9998H16.6667ZM12.4935%204.00761C12.5523%204.01808%2012.6169%204.04072%2012.6563%204.05384L15.9369%205.14758C16.0239%205.17662%2016.1227%205.20899%2016.1959%205.24459C16.2411%205.26654%2016.4562%205.37043%2016.4564%205.62024C16.4564%205.87018%2016.2412%205.97453%2016.1959%205.99654C16.1227%206.03212%2016.0239%206.06453%2015.9369%206.09355L12.6667%207.18339V8.67493C16.0095%208.84826%2018.6666%2011.6139%2018.6667%2014.9998C18.6667%2015.1839%2018.5174%2015.3331%2018.3333%2015.3331C18.1493%2015.3331%2018%2015.1839%2018%2014.9998C17.9999%2011.8703%2015.4629%209.33313%2012.3333%209.33313C9.20376%209.33313%206.66673%2011.8703%206.66667%2014.9998C6.66667%2015.1839%206.51743%2015.3331%206.33333%2015.3331C6.14924%2015.3331%206%2015.1839%206%2014.9998C6.00007%2011.6139%208.65718%208.84826%2012%208.67493V4.52714C12%204.48558%2011.9992%204.41696%2012.0078%204.35787C12.0177%204.29064%2012.049%204.16379%2012.1725%204.07467L12.2194%204.04602C12.3281%203.98837%2012.435%203.99723%2012.4935%204.00761ZM12.6667%206.48092L15.2474%205.62024L12.6667%204.75956V6.48092Z'%20fill='black'/%3e%3cpath%20d='M12.0599%2011.9783C11.9828%2012.0781%2011.7876%2012.3822%2011.6197%2012.6544L11.3157%2013.1446L10.7439%2013.2898C9.76364%2013.5484%209.75911%2013.5484%209.69558%2013.6937C9.6275%2013.8661%209.64112%2013.8888%2010.1948%2014.5468L10.6531%2015.0824L10.6259%2015.5815C10.6123%2015.8538%2010.5896%2016.2168%2010.576%2016.3848C10.5533%2016.648%2010.5624%2016.6979%2010.644%2016.7796C10.6985%2016.834%2010.7938%2016.8749%2010.8573%2016.8749C10.9209%2016.8749%2011.2794%2016.7478%2011.6515%2016.5935L12.3367%2016.3167L13.022%2016.598C13.4032%2016.7478%2013.7663%2016.8749%2013.8343%2016.8749C13.916%2016.8749%2013.9841%2016.834%2014.034%2016.7614C14.0975%2016.6616%2014.1021%2016.5663%2014.0613%2015.872L14.0113%2015.0914L14.5105%2014.5014C15.2502%2013.6256%2015.2502%2013.621%2013.8253%2013.2671L13.3487%2013.1446L12.9857%2012.5592C12.5501%2011.8512%2012.5001%2011.7922%2012.3277%2011.7922C12.2233%2011.7922%2012.1643%2011.833%2012.0599%2011.9783Z'%20fill='%23FFA552'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_6001_924'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                alt="自我提升圖示"
+              />
+              <span class="theme-label">自我提升</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 戶外活動 -->
+        <div
+          class="theme-btn"
+          data-theme="outdoor"
+          data-image="../assets/images/action/upload-img/2-img-out-door.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="/graduation_project/assets/icon-2-out-door-DTpuRyW6.svg"
+                alt="戶外活動圖示"
+              />
+              <span class="theme-label">戶外活動</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 放鬆身心 -->
+        <div
+          class="theme-btn"
+          data-theme="relax"
+          data-image="../assets/images/action/upload-img/3-img-relaxing.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="/graduation_project/assets/icon-3-relaxing-673onyC7.svg"
+                alt="放鬆身心圖示"
+              />
+              <span class="theme-label">放鬆身心</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 學習新知 -->
+        <div
+          class="theme-btn"
+          data-theme="learn"
+          data-image="../assets/images/action/upload-img/4-img-learning-new.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="/graduation_project/assets/icon-4-learning-new-QLq0UVE1.svg"
+                alt="學習新知圖示"
+              />
+              <span class="theme-label">學習新知</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 圖片預設區 -->
+      <div class="preview-box mb-3 py-7 mb-6">
+        <p class="fs-3 text-neutral-900 mb-2">活動預設示意圖片</p>
+        <img
+          id="theme-image"
+          src="/graduation_project/assets/1-img-self-improvement-D8_IeuMm.svg"
+          alt="活動圖片"
+          class="img-fluid mb-2"
+          style="max-height: 150px"
+        />
+        <p class="fs-3 text-neutral-900 mb-4">或上傳自己的圖片</p>
+        <button class="fs-5 fw-medium btn btn-outline-secondary btn-sm">
+          + 上傳圖片
+        </button>
+      </div>
+
+      <!-- 下一步 -->
+      <button class="btn btn-next">下一步</button>
+    </div>
+
+    <footer class="fixed-bottom bg-white shadow-m-above">
+  <nav class="container d-flex justify-content-evenly py-4">
+    <!-- 訊息（原本 message.html → 改成 ai-triage.html） -->
+    <a
+      href="ai-triage.html"
+      class="d-flex flex-column align-items-center nav-item-message"
+    >
+      <img src="data:image/svg+xml,%3csvg%20width='25'%20height='25'%20viewBox='0%200%2025%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3.964%2017.328C2.5%2016.157%202.5%2015.271%202.5%2011.5C2.5%207.729%202.5%205.843%203.964%204.672C5.43%203.5%207.786%203.5%2012.5%203.5C17.214%203.5%2019.571%203.5%2021.035%204.672C22.499%205.844%2022.5%207.729%2022.5%2011.5C22.5%2015.271%2022.5%2016.157%2021.035%2017.328C19.572%2018.5%2017.214%2018.5%2012.5%2018.5C9.99%2018.5%208.7%2020.238%206.5%2021.5V18.288C5.406%2018.125%204.601%2017.838%203.964%2017.328Z'%20fill='%23BDBDBD'/%3e%3cpath%20d='M9.5%2011.5L15.5%2011.5L9.5%2011.5Z'%20fill='white'/%3e%3cpath%20d='M9.5%2011.5L15.5%2011.5'%20stroke='%23FAFAFA'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="" />
+      <p class="lh-base fs-5">訊息</p>
+    </a>
+
+    <!-- 首頁 -->
+    <a
+      href="index.html"
+      class="d-flex flex-column align-items-center nav-item-home"
+    >
+      <img src="data:image/svg+xml,%3csvg%20width='25'%20height='25'%20viewBox='0%200%2025%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8.50456%207.47464C7.46842%206.83796%206.14351%206.59933%205.04472%207.05491C3.02694%207.89344%203.06508%2010.6345%204.69874%2011.8522C5.04926%2012.1135%205.47516%2012.3285%205.6486%2012.7398C5.82386%2013.1557%205.68129%2013.6405%205.47879%2014.0424C5.14915%2014.697%204.89307%2015.3053%204.69964%2016.0184C4.28283%2017.5521%204.09031%2019.8894%205.65133%2021.2477C6.74286%2022.1966%208.82148%2022.5871%2010.9037%2020.9157C11.8727%2020.1385%2012.6763%2018.6293%2012.6999%2018.6774C13.2802%2019.8725%2014.241%2021.4269%2016.2579%2022.2268C18.2829%2023.0295%2020.5186%2022.8106%2021.7155%2020.6186C22.2976%2019.5527%2022.046%2018.4567%2021.3886%2017.5153C20.9118%2016.8324%2020.3688%2016.2024%2019.8911%2015.5213C19.4843%2014.9422%2018.8868%2014.3225%2018.7842%2013.5858C18.6997%2012.9756%2018.983%2012.3747%2019.3299%2011.8748C20.1045%2010.758%2022.0815%209.30263%2021.2878%207.41333C20.0573%204.48555%2017.0779%204.91189%2016.079%205.47405C16.0526%205.48914%2014.8594%201.91241%2011.4867%202.58399C8.0832%203.26123%208.53543%207.49257%208.50456%207.4737V7.47464Z'%20fill='%23BDBDBD'/%3e%3cpath%20d='M8.50456%207.47464C7.46842%206.83796%206.14351%206.59933%205.04472%207.05491C3.02694%207.89344%203.06508%2010.6345%204.69874%2011.8522C5.04926%2012.1135%205.47516%2012.3285%205.6486%2012.7398C5.82386%2013.1557%205.68129%2013.6405%205.47879%2014.0424C5.14915%2014.697%204.89307%2015.3053%204.69964%2016.0184C4.28283%2017.5521%204.09031%2019.8894%205.65133%2021.2477C6.74286%2022.1966%208.82148%2022.5871%2010.9037%2020.9157C11.8727%2020.1385%2012.6763%2018.6293%2012.6999%2018.6774C13.2802%2019.8725%2014.241%2021.4269%2016.2579%2022.2268C18.2829%2023.0295%2020.5186%2022.8106%2021.7155%2020.6186C22.2976%2019.5527%2022.046%2018.4567%2021.3886%2017.5153C20.9118%2016.8324%2020.3688%2016.2024%2019.8911%2015.5213C19.4843%2014.9422%2018.8868%2014.3225%2018.7842%2013.5858C18.6997%2012.9756%2018.983%2012.3747%2019.3299%2011.8748C20.1045%2010.758%2022.0815%209.30263%2021.2878%207.41333C20.0573%204.48555%2017.0779%204.91189%2016.079%205.47405C16.0526%205.48914%2014.8594%201.91241%2011.4867%202.58399C8.0832%203.26123%208.53543%207.49257%208.50456%207.4737V7.47464Z'%20fill='%23BDBDBD'/%3e%3cpath%20d='M9.94922%2010.5625V12.981V10.5625Z'%20fill='white'/%3e%3cpath%20d='M9.94922%2010.5625V12.981'%20stroke='%23FAFAFA'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3cpath%20d='M14.7871%2010.5625V12.981V10.5625Z'%20fill='white'/%3e%3cpath%20d='M14.7871%2010.5625V12.981'%20stroke='%23FAFAFA'%20stroke-width='1.5'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="" />
+      <p class="lh-base fs-5">首頁</p>
+    </a>
+
+    <!-- 我的 -->
+    <a
+      href="profile.html"
+      class="d-flex flex-column align-items-center nav-item-profile"
+    >
+      <img src="data:image/svg+xml,%3csvg%20width='25'%20height='25'%20viewBox='0%200%2025%2025'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12.5021%2014.7796C10.556%2014.7785%208.65612%2015.391%207.05773%2016.5347C5.45934%2017.6784%204.23895%2019.2986%203.56045%2021.1777C3.31884%2021.8422%203.83441%2022.5%204.52256%2022.5H20.4794C21.1676%2022.5%2021.681%2021.8422%2021.4394%2021.1777C20.7611%2019.2993%2019.5414%2017.6796%2017.9439%2016.536C16.3463%2015.3923%2014.4475%2014.7794%2012.5021%2014.7796ZM17.2652%207.4125C17.2652%208.71537%2016.7628%209.96488%2015.8685%2010.8862C14.9743%2011.8074%2013.7614%2012.325%2012.4967%2012.325C11.232%2012.325%2010.0191%2011.8074%209.12484%2010.8862C8.23057%209.96488%207.72817%208.71537%207.72817%207.4125C7.72817%206.10962%208.23057%204.86011%209.12484%203.93884C10.0191%203.01756%2011.232%202.5%2012.4967%202.5C13.7614%202.5%2014.9743%203.01756%2015.8685%203.93884C16.7628%204.86011%2017.2652%206.10962%2017.2652%207.4125Z'%20fill='%23BDBDBD'/%3e%3c/svg%3e" alt="" />
+      <p class="lh-base fs-5">我的</p>
+    </a>
+  </nav>
+</footer>
+    <script src="../assets/js/action.js"></script>
+  </body>
+</html>
