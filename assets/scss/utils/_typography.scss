@@ -1,0 +1,141 @@
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM — Chinese / English Separated Version
+   中文 → PingFang TC
+   英文 → SF Pro
+   提供：H1–H5、Text-M、Text-S 中英文版本
+   ========================================================================== */
+
+/* -------------------------------
+   1. Font Families
+-------------------------------- */
+$font-zh: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+$font-en: "SF Pro", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+
+/* -------------------------------
+   2. Type Scale (from design spec)
+-------------------------------- */
+$h1-size: 40px;
+$h1-line: 120%;
+$h2-size: 32px;
+$h2-line: 120%;
+$h3-size: 24px;
+$h3-line: 120%;
+$h4-size: 20px;
+$h4-line: 120%;
+$h5-size: 18px;
+$h5-line: 120%;
+
+$text-m-size: 16px;
+$text-m-line: 100%;
+$text-s-size: 14px;
+$text-s-line: 160%;
+
+/* -------------------------------
+   3. Mixins: Chinese / English Styles
+-------------------------------- */
+@mixin zh-type($size, $line, $weight: 700) {
+  font-family: $font-zh;
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+}
+
+@mixin en-type($size, $line, $weight: 700) {
+  font-family: $font-en;
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+}
+
+/* -------------------------------
+   4. Utility Classes — 中文版
+-------------------------------- */
+.zh-h1 {
+  @include zh-type($h1-size, $h1-line, 700);
+}
+.zh-h2 {
+  @include zh-type($h2-size, $h2-line, 700);
+}
+.zh-h3 {
+  @include zh-type($h3-size, $h3-line, 600);
+}
+.zh-h4 {
+  @include zh-type($h4-size, $h4-line, 500);
+}
+.zh-h5 {
+  @include zh-type($h5-size, $h5-line, 500);
+}
+
+.zh-text-m {
+  @include zh-type($text-m-size, $text-m-line, 400);
+}
+.zh-text-s {
+  @include zh-type($text-s-size, $text-s-line, 400);
+}
+
+/* -------------------------------
+   5. Utility Classes — 英文版
+-------------------------------- */
+.en-h1 {
+  @include en-type($h1-size, $h1-line, 700);
+}
+.en-h2 {
+  @include en-type($h2-size, $h2-line, 700);
+}
+.en-h3 {
+  @include en-type($h3-size, $h3-line, 600);
+}
+.en-h4 {
+  @include en-type($h4-size, $h4-line, 500);
+}
+.en-h5 {
+  @include en-type($h5-size, $h5-line, 500);
+}
+
+.en-text-m {
+  @include en-type($text-m-size, $text-m-line, 400);
+}
+.en-text-s {
+  @include en-type($text-s-size, $text-s-line, 400);
+}
+
+/* -------------------------------
+   6. Mixed (Auto fallback) — Default global font
+-------------------------------- */
+.h1 {
+  @include zh-type($h1-size, $h1-line, 700);
+  font-family: $font-zh, $font-en;
+}
+.h2 {
+  @include zh-type($h2-size, $h2-line, 700);
+  font-family: $font-zh, $font-en;
+}
+.h3 {
+  @include zh-type($h3-size, $h3-line, 600);
+  font-family: $font-zh, $font-en;
+}
+.h4 {
+  @include zh-type($h4-size, $h4-line, 500);
+  font-family: $font-zh, $font-en;
+}
+.h5 {
+  @include zh-type($h5-size, $h5-line, 500);
+  font-family: $font-zh, $font-en;
+}
+
+.text-m {
+  @include zh-type($text-m-size, $text-m-line, 400);
+  font-family: $font-zh, $font-en;
+}
+.text-s {
+  @include zh-type($text-s-size, $text-s-line, 400);
+  font-family: $font-zh, $font-en;
+}
+
+/* -------------------------------
+   7. Global Default
+-------------------------------- */
+body {
+  font-family: $font-zh, $font-en;
+  font-size: $text-m-size;
+}

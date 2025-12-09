@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Crew Up!</title>
+  </head>
+  <body data-page="action" class="bg-tertiary-50">
+    <%- include('./layout/header'); -%>
+
+    <div class="container pt-7">
+      <!-- 建立活動nav -->
+      <nav class="navbar">
+        <div class="container-fluid position-relative">
+          <h1 class="fw-bold lh-base fs-2 mx-auto text-center">建立活動</h1>
+          <span
+            class="material-symbols-rounded position-absolute end-0 top-50 translate-middle-y me-2"
+            role="button"
+          >
+            close
+          </span>
+        </div>
+      </nav>
+
+      <!-- Stepper -->
+      <div class="py-6">
+        <div
+          class="stepper d-flex justify-content-between align-items-center gap-8 position-relative"
+        >
+          <div class="step-line"></div>
+          <!-- Step 1 -->
+          <div class="step active text-center flex-fill">
+            <div class="circle bg-primary-600 mx-auto mb-2"></div>
+            <h3 class="fs-3 fw-bold text-primary-600">活動主題</h3>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step text-center flex-fill">
+            <div class="circle bg-neutral-300 mx-auto mb-2"></div>
+            <h3 class="fs-3 text-neutral-400">活動詳情</h3>
+          </div>
+          <!-- Step 3 -->
+          <div class="step text-center flex-fill">
+            <div class="circle bg-neutral-300 mx-auto mb-2"></div>
+            <h3 class="fs-3 text-neutral-400">想說的話</h3>
+          </div>
+          <!-- 修改：step-line 確保線條收在圓點內 (left/right calc) -->
+          <div class="step-line position-absolute"></div>
+        </div>
+      </div>
+      <p class="fs-3 fw-bold text-center text-neutral-900">請選擇活動主題！</p>
+      <!-- 主題選擇 -->
+      <div class="theme-selector d-flex justify-content-center gap-4 pb-7">
+        <!-- 自我提升 -->
+        <div
+          class="theme-btn"
+          data-theme="self"
+          data-image="../assets/images/action/upload-img/1-img-self-improvement.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="../assets/images/action/icon-1-self-improvement.svg"
+                alt="自我提升圖示"
+              />
+              <span class="theme-label">自我提升</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 戶外活動 -->
+        <div
+          class="theme-btn"
+          data-theme="outdoor"
+          data-image="../assets/images/action/upload-img/2-img-out-door.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="../assets/images/action/icon-2-out-door.svg"
+                alt="戶外活動圖示"
+              />
+              <span class="theme-label">戶外活動</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 放鬆身心 -->
+        <div
+          class="theme-btn"
+          data-theme="relax"
+          data-image="../assets/images/action/upload-img/3-img-relaxing.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="../assets/images/action/icon-3-relaxing.svg"
+                alt="放鬆身心圖示"
+              />
+              <span class="theme-label">放鬆身心</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 學習新知 -->
+        <div
+          class="theme-btn"
+          data-theme="learn"
+          data-image="../assets/images/action/upload-img/4-img-learning-new.svg"
+        >
+          <div class="theme-icon">
+            <div class="icon-wrapper">
+              <img
+                src="../assets/images/action/icon-4-learning-new.svg"
+                alt="學習新知圖示"
+              />
+              <span class="theme-label">學習新知</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 圖片預設區 -->
+      <div class="preview-box mb-3 py-7 mb-6">
+        <p class="fs-3 text-neutral-900 mb-2">活動預設示意圖片</p>
+        <img
+          id="theme-image"
+          src="../assets/images/action/upload-img/1-img-self-improvement.svg"
+          alt="活動圖片"
+          class="img-fluid mb-2"
+          style="max-height: 150px"
+        />
+        <p class="fs-3 text-neutral-900 mb-4">或上傳自己的圖片</p>
+        <button class="fs-5 fw-medium btn btn-outline-secondary btn-sm">
+          + 上傳圖片
+        </button>
+      </div>
+
+      <!-- 下一步 -->
+      <button class="btn btn-next">下一步</button>
+    </div>
+
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="../main.js"></script>
+    <script src="../assets/js/action.js"></script>
+  </body>
+</html>

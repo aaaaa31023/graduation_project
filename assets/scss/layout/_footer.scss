@@ -1,0 +1,48 @@
+.nav-item-message,.nav-item-home,.nav-item-profile{
+    color: $neutral-400;
+}
+
+.nav-item-message{
+    position: relative;
+    &::before{
+       content: '';
+       position: absolute;
+       top: 0;
+       right: 0;
+       width: 7px;
+       height: 7px;
+       background-color: $accent;
+       border-radius: 50%;
+    }
+}
+
+// message.html - active 狀態
+body[data-page="message"] .nav-item-message{
+    img {
+      content: url("../assets/images/bottom-tab-icon-message-acitve.svg");
+    }
+    p{
+        color: $primary-700;
+    }
+    &::before{
+        display: none;
+    }
+} 
+// index.html - active 狀態
+body[data-page="home"] .nav-item-home{
+    img {
+      content: url("../assets/images/bottom-tab-icon-home-active.svg");
+    }
+    p{
+        color: $primary-700;
+    }
+} 
+// profile.html - active 狀態
+body[data-page="profile"] .nav-item-profile{
+    img {
+      content: url("../images/bottom-tab-icon-member-active.svg");
+    }
+    p{
+        color: $primary-700;
+    }
+} 

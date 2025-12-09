@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+
+    <!-- 全站 CSS -->
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+
+  <body>
+    <!-- 全站 SVG Icons（Sprite） -->
+    <%- include('./icons') %>
+
+    <!-- Header -->
+    <%- include('./header') %>
+
+    <!-- 頁面內容 -->
+    <main><%- body %></main>
+
+    <!-- Footer -->
+    <%- include('./footer') %>
+  </body>
+</html>

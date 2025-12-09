@@ -1,0 +1,112 @@
+$utilities: map-merge(
+    $utilities,(
+        "rounded": (
+        property: border-radius,
+        class: rounded,
+        values: (
+            null: var(--#{$prefix}border-radius),
+            0: 0,
+            1: $border-radius-star,
+            2: $border-radius-xxs,
+            3: $border-radius-xs,
+            4: $border-radius-s,
+            5: $border-radius-m,
+            6: $border-radius-l,
+            7: $border-radius-xl,
+            circle: 50%,
+            pill: var(--#{$prefix}border-radius-pill)
+        )
+        ),
+        "rounded-top": (
+        property: border-top-left-radius border-top-right-radius,
+        class: rounded-top,
+        values: (
+            null: var(--#{$prefix}border-radius),
+            0: 0,
+            1: $border-radius-star,
+            2: $border-radius-xxs,
+            3: $border-radius-xs,
+            4: $border-radius-s,
+            5: $border-radius-m,
+            6: $border-radius-l,
+            7: $border-radius-xl,
+            circle: 50%,
+            pill: var(--#{$prefix}border-radius-pill)
+        )
+        ),
+        "rounded-end": (
+        property: border-top-right-radius border-bottom-right-radius,
+        class: rounded-end,
+        values: (
+            null: var(--#{$prefix}border-radius),
+            0: 0,
+            1: $border-radius-star,
+            2: $border-radius-xxs,
+            3: $border-radius-xs,
+            4: $border-radius-s,
+            5: $border-radius-m,
+            6: $border-radius-l,
+            7: $border-radius-xl,
+            circle: 50%,
+            pill: var(--#{$prefix}border-radius-pill)
+        )
+        ),
+        "rounded-bottom": (
+        property: border-bottom-right-radius border-bottom-left-radius,
+        class: rounded-bottom,
+        values: (
+            null: var(--#{$prefix}border-radius),
+            0: 0,
+            1: $border-radius-star,
+            2: $border-radius-xxs,
+            3: $border-radius-xs,
+            4: $border-radius-s,
+            5: $border-radius-m,
+            6: $border-radius-l,
+            7: $border-radius-xl,
+            circle: 50%,
+            pill: var(--#{$prefix}border-radius-pill)
+        )
+        ),
+        "rounded-start": (
+        property: border-bottom-left-radius border-top-left-radius,
+        class: rounded-start,
+        values: (
+            null: var(--#{$prefix}border-radius),
+            0: 0,
+            1: $border-radius-star,
+            2: $border-radius-xxs,
+            3: $border-radius-xs,
+            4: $border-radius-s,
+            5: $border-radius-m,
+            6: $border-radius-l,
+            7: $border-radius-xl,
+            circle: 50%,
+            pill: var(--#{$prefix}border-radius-pill)
+        )
+        ),
+
+        "shadow": (
+        property: box-shadow,
+        class: shadow,
+        values: (
+            null: var(--#{$prefix}box-shadow),
+            sm: var(--#{$prefix}box-shadow-sm),
+            lg: var(--#{$prefix}box-shadow-lg),
+            none: none,
+
+            xs: $box-shadow-xs,
+            s: $box-shadow-s,
+            m-under: $box-shadow-m-under,
+            m-above: $box-shadow-m-above,
+            l: $box-shadow-l,
+            xl:$box-shadow-xl,
+        )
+        ),        
+
+
+
+
+
+    )    
+)

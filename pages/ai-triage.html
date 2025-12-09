@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>AI問診</title>
+  </head>
+
+  <body data-page="ai-triage" class="bg-tertiary-50">
+    <!-- Icons -->
+    <svg style="display: none"><%- include('./layout/icons'); -%></svg>
+
+    <!-- Header -->
+    <%- include('./layout/header'); -%>
+
+    <section>
+      <div class="d-flex gap-3 flex-column">
+        <!-- Top bar -->
+        <div class="top-bar pt-8">
+          <div class="text-center">
+            <div class="zh-h2 mb-4">AI 問診</div>
+            <span class="pill-tag zh-h5" id="modeTag">聲音模式</span>
+          </div>
+        </div>
+
+        <!-- Chat area -->
+        <div class="chat-area-wrapper">
+          <div class="quick-tags-header">
+            <span class="quick-tags-title zh-text-m">常見症狀</span>
+          </div>
+
+          <div class="quick-tags">
+            <button class="quick-tag-btn" data-text="身體沒力">
+              <span class="quick-tag-text zh-h5">身體沒力</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="膝蓋痛">
+              <span class="quick-tag-text zh-h5">膝蓋痛</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="看不清楚">
+              <span class="quick-tag-text zh-h5">看不清楚</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="頻尿">
+              <span class="quick-tag-text zh-h5">頻尿</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+            <button class="quick-tag-btn" data-text="血壓高">
+              <span class="quick-tag-text zh-h5">血壓高</span>
+              <svg class="tag-icon"><use href="#icon-arrow"></use></svg>
+            </button>
+          </div>
+
+          <!-- Listening animation block -->
+          <div id="listeningBlock" class="listening-top-block d-none">
+            <div class="sound-wave" id="soundWave">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+
+          <!-- Chat messages -->
+          <div
+            id="chatScroller"
+            class="chat-scroller"
+            style="padding-bottom: 150px"
+          >
+            <div id="statusText" class="zh-text-m mb-3" style="color: #666">
+              點擊麥克風開始問診
+            </div>
+
+            <div class="chat-bubble-row">
+              <div>
+                <div class="chat-bubble bubble-ai">
+                  您好，我是 AI 問診小幫手。您可以直接說出現在哪裡不舒服，
+                  我會先幫您分析，提供較合適的看診科別參考。
+                </div>
+                <div class="chat-time">
+                  <span id="welcomeTime"></span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="previewBubble"
+              class="chat-bubble bubble-user hidden"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Bottom mic & send bar -->
+        <div class="bottom-bar fixed-bottom-bar">
+          <!-- ⭐ Mic主按鈕：懸浮在膠囊上方（50% 覆蓋） -->
+          <button id="micBtn" class="mic-main-btn" type="button">
+            <svg id="micIconMic" class="mic-icon" width="48" height="48">
+              <use href="#icon-mic"></use>
+            </svg>
+
+            <svg
+              id="micIconStop"
+              class="mic-icon hidden"
+              width="48"
+              height="48"
+            >
+              <rect x="12" y="12" width="24" height="24" rx="4" fill="white" />
+            </svg>
+
+            <div id="micSquare" class="mic-square hidden"></div>
+          </button>
+
+          <!-- ⭐ White pill row -->
+          <div
+            class="bottom-row d-flex justify-content-between align-items-center py-5"
+          >
+            <button
+              id="resetBtn"
+              class="bottom-icon-btn text-center"
+              type="button"
+              disabled
+            >
+              <div class="bottom-icon">
+                <span class="material-symbols-rounded" style="font-size: 32px"
+                  >delete</span
+                >
+              </div>
+              <div class="bottom-icon-label zh-text-m">退出</div>
+            </button>
+
+            <div
+              id="recordHint"
+              class="bottom-text text-center zh-text-m align-self-end"
+            >
+              點擊即可說話
+            </div>
+
+            <button
+              id="sendBtn"
+              class="bottom-icon-btn text-center"
+              type="button"
+              disabled
+            >
+              <div class="bottom-icon">
+                <span class="material-symbols-rounded" style="font-size: 32px"
+                  >send</span
+                >
+              </div>
+              <div class="zh-text-m">傳送</div>
+            </button>
+
+            <button id="muteBtn" class="d-none" type="button">
+              關閉 / 開啟語音播報
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script type="module" src="../main.js"></script>
+    <script src="../assets/js/ai-triage.js"></script>
+  </body>
+</html>

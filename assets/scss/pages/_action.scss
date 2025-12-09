@@ -1,0 +1,110 @@
+.circle {
+  width: 11px; /* 修改：固定圓大小 */
+  height: 11px; /* 修改：固定圓大小 */
+  border-radius: 50%;
+  margin: 0 auto 2px auto;
+}
+
+.step-line {
+  position: absolute;
+  top: 5px; /* 對齊圓心 (11/2 ≈ 5.5) */
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background-color: #d1d5db; /* 灰色線 */
+  z-index: -1;
+}
+
+.preview-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+}
+.btn-next {
+  background-color: #a8491c;
+  color: white;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+// js
+.theme-selector {
+  margin-top: 20px;
+}
+
+.theme-btn {
+  display: flex; /* 🟢 修改：直向排列 icon + label */
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.5; /* 🟢 修改：非 active 預設透明度 */
+  transition: all 0.2s ease;
+}
+
+.theme-btn .theme-icon {
+  width: 75px; /* 🟢 修改：圓形大小 */
+  height: 75px;
+  border: 2px solid #ccc; /* 🟢 新增：圓框 */
+  border-radius: 50%; /* 🟢 新增：變圓形 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px; /* 🟢 修改：圓與文字距離 */
+  background-color: #fff; /* 🟢 修改：圓內底色 */
+}
+
+.theme-btn .theme-icon img {
+  width: 24px; /* 🟢 修改：icon 保留位置 */
+  height: 24px;
+  object-fit: contain;
+}
+
+.theme-btn .theme-label {
+  font-size: 14px; /* 🟢 修改：文字大小 */
+  color: #555; /* 🟢 修改：預設灰色文字 */
+}
+
+.theme-btn.active {
+  opacity: 1; /* 🟢 修改：active 狀態變清晰 */
+}
+
+.theme-btn.active .theme-icon {
+  border-color: #3d758c; /* 🟢 修改：active 外框顏色 */
+}
+
+.theme-btn.active .theme-label {
+  color: #3d758c; /* 🟢 修改：active 文字顏色 */
+  font-weight: bold; /* 🟢 修改：active 文字加粗 */
+}
+
+// new
+.theme-btn .theme-icon {
+  width: 75px;
+  height: 75px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  background-color: #fff;
+}
+
+.theme-btn .icon-wrapper {
+  display: flex;
+  flex-direction: column; /* 上下排列 */
+  align-items: center; /* 水平置中 */
+}
+
+.theme-btn .theme-icon img {
+  width: 24px; /* icon 縮小 */
+  height: 24px;
+}
+
+.theme-btn .theme-label {
+  font-size: 12px; /* 🟢 文字大小 */
+  color: #555;
+}

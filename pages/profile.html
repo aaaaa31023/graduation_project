@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Profile｜Crew Up!</title>
+  </head>
+  <body data-page="profile">
+    <%- include('./layout/header'); -%>
+
+    <section class="bg-primary-100">
+      <div class="d-flex py-6 px-7 gap-6 align-items-start">
+        <div>
+          <img src="../assets/images/profile/profile-headshot.jpg" alt="林薇" class="profile-headshot rounded-4 img-fluid object-fit-cover">
+        </div>
+        <div class="flex-shrink-0 me-auto">
+          <h2 class="fw-bold text-black fs-2 lh-base">林薇</h2>
+          <p class="lh-base fs-5 text-neutral">＠wei_lin_havefun</p>
+          <div class="d-flex gap-2 align-items-center">
+            <p class="fw-semibold text-accent" style="font-size: 17px;">4.0</p>
+            <img src="../assets/images/profile/star.svg" alt="">
+            <p class="lh-base fs-4 text-neutral-950">（3則評論）</p>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <i class="bi bi-geo-alt"></i>
+            <p class="lh-base fs-4 text-neutral-950">台中市</p>
+            <p class="lh-base fs-4 text-neutral-950">/ 行銷經理</p>
+          </div>
+        </div>
+        <button type="button" class="btn btn-link m-0 p-0">
+          <i class="bi bi-three-dots-vertical"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-primary-200">
+      <div class="d-flex py-4">
+        <div class="d-flex flex-column align-items-center border-end border-1 border-neutral-300 w-50 profile-stats-border-outline">
+          <h3 class="lh-base fs-5 text-neutral-950">參與活動數</h3>
+          <p class="text-accent fw-medium fs-3">5</p>
+        </div>
+        <div class="d-flex flex-column align-items-center w-50">
+          <h3 class="lh-base fs-5 text-neutral-950">發起活動數</h3>
+          <p class="text-accent fw-medium fs-3">1</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-tertiary-50 pt-7">
+      <div>
+        <!-- 個人檔案、隊友回饋按鈕 -->
+        <ul class="nav nav-pills mb-7 container d-flex justify-content-center" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="profile-tab-btn fs-4 lh-base active me-4" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">個人檔案</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="profile-tab-btn fs-4 lh-base" id="pills-feedback-tab" data-bs-toggle="pill" data-bs-target="#pills-feedback" type="button" role="tab" aria-controls="pills-feedback" aria-selected="true">隊友回饋</button>
+          </li>
+        </ul>
+        <!-- 對應區塊 -->
+        <div class="tab-content" id="pills-tabContent">
+          <!-- 個人檔案 -->
+          <div class="tab-pane fade show active pb-8" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+            <div>
+              <p class="container lh-base fs-4 pb-5 mb-6">Hi! 我是林薇，也可以叫我 wei，是道地台中人，平常喜歡探訪各種小店、咖啡廳，週末也常去爬山，很在乎工作生活平衡。希望認識志同道合的好夥伴，結伴同行不孤單！</p>
+              <div class="pb-8">
+                <div class="swiper position-relative">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <div class="profile-swiper-img">
+                        <img src="../assets/images/profile/profile-swiper3.jpg" alt="" class="rounded-3 shadow-l">                                 
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="profile-swiper-img">
+                        <img src="../assets/images/profile/profile-swiper2.jpg" alt="" class="rounded-3 shadow-l">                                 
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="profile-swiper-img">
+                        <img src="../assets/images/profile/profile-swiper1.jpg" alt="" class="rounded-3 shadow-l">                                 
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="profile-swiper-img">
+                        <img src="../assets/images/profile/profile-swiper3.jpg" alt="" class="rounded-3 shadow-l">                                 
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="profile-swiper-img">
+                        <img src="../assets/images/profile/profile-swiper2.jpg" alt="" class="rounded-3 shadow-l">                                 
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="profile-swiper-img">
+                        <img src="../assets/images/profile/profile-swiper1.jpg" alt="" class="rounded-3 shadow-l">                                 
+                      </div>
+                    </div>
+                  </div> 
+                  <!-- 左右滑動按鈕 -->
+                  <button class="profile-swiper-button profile-swiper-button-prev text-white position-absolute translate-middle-y z-1 rounded-pill text-center d-flex align-items-center justify-content-center fs-4">
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                  <button class="profile-swiper-button profile-swiper-button-next text-white position-absolute translate-middle-y z-2 rounded-pill text-center d-flex align-items-center justify-content-center fs-4">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>                 
+              </div>
+              <div class="container">
+                <div class="pb-8">
+                  <h3 class="lh-base fs-3 fw-medium text-neutral-950 text-center pb-5">我的興趣</h3>
+                  <div class="d-flex justify-content-center gap-4 flex-wrap">
+                    <span class="bg-secondary-200 text-secondary-700 py-4 px-5 rounded-pill lh-base fs-5">Lo-fi 音樂</span>
+                    <span class="bg-secondary-200 text-secondary-700 py-4 px-5 rounded-pill lh-base fs-5">手繪</span>
+                    <span class="bg-secondary-200 text-secondary-700 py-4 px-5 rounded-pill lh-base fs-5">咖啡廳</span>
+                    <span class="bg-secondary-200 text-secondary-700 py-4 px-5 rounded-pill lh-base fs-5">郊山健行</span>
+                    <span class="bg-secondary-200 text-secondary-700 py-4 px-5 rounded-pill lh-base fs-5">觀葉植物</span>
+                    <span class="bg-secondary-200 text-secondary-700 py-4 px-5 rounded-pill lh-base fs-5">電影</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="lh-base fs-3 fw-medium text-neutral-950 text-center pb-5">我的目標</h3>
+                  <div class="d-flex flex-column gap-4">
+                    <div class="row bg-white rounded-3 align-items-center p-4">
+                      <div class="col-4">
+                        <div class="ratio ratio-16x9">
+                          <img src="../assets/images/profile/profile-goal1.jpg" alt="" class="img-fluid rounded-3 object-fit-cover">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <p class="lh-base fs-4 text-neutral-950 flex-shrink-1">一個月閱讀兩本書</p>
+                      </div>
+                    </div>
+                    <div class="row bg-white rounded-3 align-items-center p-4">
+                      <div class="col-4">
+                        <div class="ratio ratio-16x9">
+                          <img src="../assets/images/profile/profile-goal2.jpg" alt="" class="img-fluid rounded-3 object-fit-cover">
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <p class="lh-base fs-4 text-neutral-950 flex-shrink-1">持續兩週晚上11點就寢</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- 隊友回饋 -->
+          <div class="tab-pane fade pb-9" id="pills-feedback" role="tabpanel" aria-labelledby="pills-feedback-tab" tabindex="0">
+            <div class="container">
+              <div class="px-5 d-flex gap-5 flex-column">
+                <!-- 卡片1 -->
+                <div class="d-flex bg-white shadow-s rounded-3 p-6 justify-content-start gap-5">
+                  <div class="d-flex flex-column align-items-center">
+                    <div class="profile-feedback-img">
+                      <img src="../assets/images/profile/profile-feedback1.jpg" alt="" class="img-fluid rounded-circle">
+                    </div>
+                    <p class="fw-medium lh-base fs-4 text-neutral-950">David</p>
+                  </div>
+                  <div class="d-flex flex-column gap-4 pe-9">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="d-flex gap-1 align-items-center">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star-gray.svg" alt="">
+                        <img src="../assets/images/profile/dot-gray.svg" alt="" class="px-3">
+                      </div>
+                      <p class="lh-base text-neutral-400 fs-5">2025/06/30</p>
+                    </div>
+                    <p class="lh-base fs-5 text-neutral-950">Ｗei 對生活很有想法，也很有執行力，因為她的組隊，我已經完成了 3 個目標！真的很開心能在變好的路上遇見她!</p>
+                    <p class="lh-base text-neutral-400" style="font-size: 11px;">評論來自：晨間冥想 5 分鐘</p>
+                  </div>
+                </div>
+                <!-- 卡片2 -->
+                <div class="d-flex bg-white shadow-s rounded-3 p-6 justify-content-start gap-5">
+                  <div class="d-flex flex-column align-items-center">
+                    <div class="profile-feedback-img">
+                      <img src="../assets/images/profile/profile-feedback2.png" alt="" class="img-fluid rounded-circle">
+                    </div>
+                    <p class="fw-medium lh-base fs-4 text-neutral-950">Amy</p>
+                  </div>
+                  <div class="d-flex flex-column gap-4 pe-9">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="d-flex gap-1 align-items-center">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star-gray.svg" alt="">
+                        <img src="../assets/images/profile/dot-gray.svg" alt="" class="px-3">
+                      </div>
+                      <p class="lh-base text-neutral-400 fs-5">2025/06/20</p>
+                    </div>
+                    <p class="lh-base fs-5 text-neutral-950">Ｗei 對生活很有想法，也很有執行力，因為她的組隊，我已經完成了 3 個目標！真的很開心能在變好的路上遇見她!</p>
+                    <p class="lh-base text-neutral-400" style="font-size: 11px;">評論來自：台中捷運美食起步走</p>
+                  </div>
+                </div>
+                <!-- 卡片3 -->
+                <div class="d-flex bg-white shadow-s rounded-3 p-6 justify-content-start gap-5">
+                  <div class="d-flex flex-column align-items-center">
+                    <div class="profile-feedback-img">
+                      <img src="../assets/images/profile/profile-feedback3.png" alt="" class="img-fluid rounded-circle">
+                    </div>
+                    <p class="fw-medium lh-base fs-4 text-neutral-950">蘇菲</p>
+                  </div>
+                  <div class="d-flex flex-column gap-4 pe-9">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="d-flex gap-1 align-items-center">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star.svg" alt="">
+                        <img src="../assets/images/profile/star-gray.svg" alt="">
+                        <img src="../assets/images/profile/dot-gray.svg" alt="" class="px-3">
+                      </div>
+                      <p class="lh-base text-neutral-400 fs-5">2025/06/20</p>
+                    </div>
+                    <p class="lh-base fs-5 text-neutral-950">Ｗei 對生活很有想法，也很有執行力，因為她的組隊，我已經完成了 3 個目標！真的很開心能在變好的路上遇見她!</p>
+                    <p class="lh-base text-neutral-400" style="font-size: 11px;">評論來自：台中捷運美食起步走</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>            
+          </div>
+
+        </div>      
+      </div>
+    </section>
+
+
+    <%- include('./layout/footer'); -%>
+    <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+.header {
+  background: url(../images/logo.svg);
+  width: 104px;
+  height: 27px;
+  display: block;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cart {
+  width: 24px;
+  height: 24px;
+}
+
+.cart-tag {
+  width: 12px;
+  height: 12px;
+  font-size: 8px;
+}
+
+//
+.custom-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-left,
+.header-right {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  color: #1e293b;
+}
+
+.header-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #dcedc8; /* 淡綠色背景 */
+}
+
+header,
+.header,
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* 確保蓋住下方內容 */
+  background: #ffffff; /* 不透明背景避免看到滾動內容 */
+}
+
+/* 讓內容不要被 header 擋住：補上等高的 padding-top */
+body[data-page="ai-triage"] section {
+  padding-top: 60px;
+  margin-top: 0;
+}

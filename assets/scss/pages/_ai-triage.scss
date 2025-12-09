@@ -1,0 +1,528 @@
+/* === 基礎樣式 === */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bottom-height: 120px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei",
+    sans-serif;
+  background: #faf7ef;
+}
+
+/* icon */
+.tag-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+/* 上方頭區 */
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 18px 12px;
+  background: transparent; /* ★★ 新增 */
+}
+
+body[data-page="message"] header,
+body[data-page="message"] .header,
+body[data-page="message"] .page-header {
+  background: #faf7ef;
+  background-image: none;
+}
+
+/* 說話時：綠色漸層 */
+body.listening-mode .top-bar {
+  background: linear-gradient(180deg, #ccf6be 0%, rgba(132, 204, 22, 0) 100%);
+}
+
+/* 聲音模式標籤（只顯示，非互動） */
+.pill-tag {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 4px 16px;
+  border-radius: 12px;
+  background-color: #e9f9e5;
+  color: #3da552;
+  border: 1px solid #b7e4bf;
+  pointer-events: none;
+}
+
+/* 右上圓形 */
+.top-avatar {
+  justify-self: end;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgb(162, 213, 162);
+}
+
+/* 中間主要內容 */
+.chat-area-wrapper {
+  flex: 1;
+  padding: 10px 16px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+body.listening-mode .chat-area-wrapper {
+  padding-top: 28px;
+}
+
+.listening-top-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 220px;
+  justify-content: flex-start;
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+/* 常見標籤 */
+/* 標題靠右 */
+.quick-tags-header {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 4px 8px;
+}
+
+.quick-tags-title {
+  color: #8c8c8c;
+}
+
+/* 按鈕群組：置中、固定 12px 間距 */
+.quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 8px;
+}
+
+/* 按鈕 */
+.quick-tag-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: #4a4a4a;
+  font-size: 18px;
+  line-height: 120%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.quick-tag-btn:hover {
+  background-color: #f2f7ef;
+}
+
+/* icon 統一樣式（不影響 footer 的 send icon） */
+.tag-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #4a4a4a;
+  stroke-width: 2;
+}
+
+/* 狀態文字（實際被隱藏，只當占位） */
+.status-text-center {
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.45;
+  margin-bottom: 10px;
+  padding: 0 12px;
+}
+
+/* 動態波 new */
+.sound-wave {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 200px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.bar {
+  width: 10px;
+  background-color: #ccc;
+  height: 20%;
+  border-radius: 4px;
+  transition: height 0.15s ease;
+}
+
+.sound-wave.active .bar {
+  background-color: #7bb65b;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.bar:nth-child(1) {
+  animation-delay: 0s;
+}
+.bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.bar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.bar:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.bar:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.bar:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+/* 對話區 */
+.chat-scroller {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 4px 8px;
+  margin-top: 4px;
+}
+
+.chat-bubble-row {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  border-radius: 18px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bubble-user {
+  margin-left: auto;
+  background-color: #73c76a;
+  color: #ffffff;
+
+  /* ※ 讓文字不斷行 AND 讓氣泡自動變長 */
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  word-break: keep-all;
+
+  /* ※ 限制不要超過畫面，不然會爆版 */
+  max-width: 100%;
+
+  /* 你原本的外觀設定 */
+  padding: 8px 12px;
+  border-radius: 18px;
+  border-bottom-right-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.bubble-ai {
+  margin-right: auto;
+  background-color: #ffffff;
+  border-bottom-left-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.chat-time {
+  font-size: 11px;
+  color: #8c8c8c;
+  margin-top: 2px;
+}
+
+/* AI 建議科別按鈕群：放在白色對話框裡面 */
+.chat-bubble .suggest-buttons {
+  margin-top: 6px;
+}
+
+/* 綠色選項按鈕 */
+.bubble-btn-wrap {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bubble-btn {
+  width: 100%;
+  border-radius: 999px;
+  font-size: 14px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #79c162;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.bubble-btn:hover {
+  background: #619e50;
+}
+
+/* 左右小按鈕 */
+.bottom-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.bottom-icon-btn {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  cursor: pointer;
+  color: #b0b4b8;
+}
+
+.bottom-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid #d0d3d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* disabled：灰 */
+.bottom-icon-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* enabled：綠 */
+.bottom-icon-btn:not(:disabled) {
+  color: #4a4f55;
+}
+
+.bottom-icon-btn:not(:disabled) .bottom-icon {
+  color: #61c155;
+}
+
+/* 使用說明框：整個隱藏 */
+// .usage-tip {
+//   display: none !important;
+// }
+
+/* 下方文字 */
+.bottom-text {
+  text-align: center;
+  color: #6c757d;
+  margin-top: 6px;
+}
+
+/* 聆聽模式：隱藏常見症狀 */
+body.listening-mode .quick-tags-header,
+body.listening-mode .quick-tags {
+  display: none;
+}
+
+/* 聆聽模式：放大辨識文字 */
+body.listening-mode #statusText {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.35;
+  max-height: 3.2em;
+  overflow: hidden;
+  padding: 0 22px;
+  color: #3a3a3a;
+}
+
+/* 聆聽模式：讓聲波往上靠近辨識文字 */
+body.listening-mode .sound-wave {
+  margin-top: 18px;
+}
+
+/* =========================================
+   🎤 底部懸浮區與麥克風
+   ========================================= */
+
+/* 整個底部區塊變成透明，只負責定位 */
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 998;
+  padding: 0 16px calc(8px + env(safe-area-inset-bottom));
+  border-radius: 0;
+  box-shadow: none;
+  pointer-events: none;
+  --bottom-height: 120px;
+}
+
+/* 懸浮白色膠囊列（退出 / 提示字 / 傳送） */
+.bottom-row {
+  pointer-events: auto;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 10px 24px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* 麥克風主按鈕（依舊 fixed，懸浮在膠囊上方） */
+.mic-main-btn {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  bottom: calc(var(--bottom-height) - 50px);
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #61c155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: bottom 0.25s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  border: 2px solid transparent;
+  outline: none;
+  pointer-events: auto;
+  animation: none;
+}
+
+.mic-main-btn:focus-visible,
+.mic-main-btn:active {
+  outline: none;
+}
+
+/* hover 效果 */
+.mic-main-btn:hover {
+  transform: translateX(-50%) scale(1.04);
+  box-shadow: 0 0 0 6px rgba(97, 193, 85, 0.2);
+}
+
+/* 錄音中的動畫 */
+.mic-main-btn.listening {
+  background-color: #4cad49;
+  animation: micPulse 1.4s infinite;
+}
+
+@keyframes micPulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(97, 193, 85, 0.6);
+  }
+  70% {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 0 0 12px rgba(97, 193, 85, 0);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(97, 193, 85, 0);
+  }
+}
+
+/* 麥克風 icon / 停止方塊：未錄音回到原本麥克風樣式 */
+.mic-main-btn .mic-icon {
+  width: 48px;
+  height: 48px;
+  color: white;
+  fill: currentColor;
+  pointer-events: none;
+}
+
+.mic-square {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 6px;
+}
+
+/* 預設只顯示麥克風 */
+.mic-main-btn .mic-square {
+  display: none;
+}
+
+/* 錄音中顯示停止方塊、隱藏麥克風 */
+.mic-main-btn.listening .mic-icon {
+  display: none;
+}
+
+.mic-main-btn.listening .mic-square {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .phone-frame {
+    border-radius: 0;
+    height: 100vh;
+  }
+}
+
+/* 之前的較大灰圓 icon（左右的小按鈕用） */
+.bottom-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f3f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-send {
+  width: 32px;
+  height: 32px;
+  fill: none;
+  stroke: #9aa2ac;
+}
+
+/* 狀態文字：實際不用顯示 */
+#statusText {
+  color: transparent;
+  user-select: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
