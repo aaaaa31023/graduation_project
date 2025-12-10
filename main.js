@@ -2,6 +2,9 @@ import "./assets/scss/all.scss";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "./assets/js/ai-triage.js";
 
+import Swiper from "swiper/bundle";
+import "swiper/css/bundle";
+
 console.log("Hello world");
 
 const swiper = new Swiper(".swiper", {
