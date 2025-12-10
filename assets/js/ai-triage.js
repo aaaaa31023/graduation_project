@@ -93,7 +93,9 @@ function initSpeechRecognition() {
 
   // ===== 開始錄音 =====
   recognition.addEventListener("start", () => {
+    // ★★★ 加入：body 增加 listening-mode (顯示綠色漸層) ★★★
     document.body.classList.add("listening-mode");
+
     isListening = true;
     startWave();
     sessionTranscript = "";
@@ -128,6 +130,9 @@ function initSpeechRecognition() {
 
   // ===== 停止錄音 =====
   recognition.addEventListener("end", () => {
+    // ★★★ 修復重點：移除 body 的 listening-mode (恢復透明背景) ★★★
+    document.body.classList.remove("listening-mode");
+
     isListening = false;
     stopWave();
 
@@ -152,6 +157,9 @@ function initSpeechRecognition() {
   // ===== 語音辨識錯誤 =====
   recognition.addEventListener("error", (event) => {
     console.error("Speech recognition error:", event);
+
+    // ★★★ 修復重點：發生錯誤也要移除綠色背景 ★★★
+    document.body.classList.remove("listening-mode");
 
     isListening = false;
     micBtn.classList.remove("listening");
@@ -830,11 +838,14 @@ sendBtn.addEventListener("click", () => {
 
   statusText.textContent = "正在分析您的狀況…";
 
-  //  新增：傳送後一定恢復成麥克風 icon
+  // 新增：傳送後一定恢復成麥克風 icon
   document.getElementById("micSquare").classList.add("hidden");
   micIconStop.classList.add("hidden");
   micIconMic.classList.remove("hidden");
   micBtn.classList.remove("listening");
+
+  // ★★★ 修復重點：送出後強制移除綠色背景，避免有時候狀態卡住 ★★★
+  document.body.classList.remove("listening-mode");
 
   callGptTriageApi(textToSend);
 });
@@ -861,18 +872,13 @@ quickTagButtons.forEach((btn) => {
   });
 });
 
+// 合併了重複的 listener
 closeTipBtn.addEventListener("click", () => {
-  usageTip.style.display = "none";
-});
-
-closeTipBtn.addEventListener("click", () => {
-  usageTip.classList.add("hidden");
+  if (usageTip) {
+    usageTip.style.display = "none";
+    usageTip.classList.add("hidden");
+  }
   if (typeof updateBottomBarHeight === "function") {
     updateBottomBarHeight();
   }
-});
-
-// 關閉 usageTip（保留唯一一個 listener）
-closeTipBtn.addEventListener("click", () => {
-  usageTip.classList.add("hidden");
 });

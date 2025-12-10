@@ -35,7 +35,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0px 18px 12px;
-  background: transparent; /* ★★ 新增 */
+
+  /* ★關鍵：初始背景透明 */
+  background: transparent;
 }
 
 body[data-page="message"] header,
@@ -45,7 +47,11 @@ body[data-page="message"] .page-header {
   background-image: none;
 }
 
-/* 說話時：綠色漸層 */
+/* ★關鍵邏輯：
+   只有在 body 有 listening-mode (錄音中) 時，
+   top-bar 才會變成綠色漸層。
+   移除 class 後會自動變回上面的 background: transparent。
+*/
 body.listening-mode .top-bar {
   background: linear-gradient(180deg, #ccf6be 0%, rgba(132, 204, 22, 0) 100%);
 }
@@ -225,7 +231,8 @@ body.listening-mode .chat-area-wrapper {
 }
 
 .chat-bubble {
-  max-width: 80%;
+  /* 限制氣泡最大寬度 (17字+padding) */
+  max-width: 19em;
   border-radius: 18px;
   padding: 8px 12px;
   font-size: 14px;
@@ -237,16 +244,13 @@ body.listening-mode .chat-area-wrapper {
   background-color: #73c76a;
   color: #ffffff;
 
-  /* ※ 讓文字不斷行 AND 讓氣泡自動變長 */
+  /* 允許換行並限制寬度 */
   display: inline-flex;
   align-items: center;
-  white-space: nowrap;
-  word-break: keep-all;
+  white-space: normal; /* 允許換行 */
+  word-break: break-all; /* 強制在寬度邊緣斷行 */
+  max-width: 19em; /* 寬度限制 */
 
-  /* ※ 限制不要超過畫面，不然會爆版 */
-  max-width: 100%;
-
-  /* 你原本的外觀設定 */
   padding: 8px 12px;
   border-radius: 18px;
   border-bottom-right-radius: 4px;
@@ -342,9 +346,9 @@ body.listening-mode .chat-area-wrapper {
 }
 
 /* 使用說明框：整個隱藏 */
-// .usage-tip {
-//   display: none !important;
-// }
+/* .usage-tip {
+  display: none !important;
+} */
 
 /* 下方文字 */
 .bottom-text {
